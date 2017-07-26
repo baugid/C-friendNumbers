@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <cmath>
 
 struct pair {
 	unsigned long long val1;
@@ -8,20 +9,13 @@ struct pair {
 
 unsigned long long sumDividers(const unsigned long long& n) {
 	unsigned long long sum = 1;
-	unsigned long long iSqare;
-	for (unsigned long long i = 2; i < n; i++) {
+	unsigned long long root =sqrtl(n);
+	for (unsigned long long i = 2; i <= root; i++) {
 		if (n%i==0) {
-			iSqare = i*i;
-				if (iSqare < n) {
 					sum += i;
-					sum += n / i;
-				}
-				else {
-					if (iSqare == n) {
-						sum += i;
+					if (i*i != n) {
+						sum += n / i;
 					}
-					return sum;
-				}
 		}
 	}
 	return sum;
