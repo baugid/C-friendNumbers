@@ -80,4 +80,5 @@ int main() {
 	std::cout << "Time: " << std::chrono::duration_cast<std::chrono::seconds>(stop - start).count() << "S\n";
 	std::cin.ignore();
 	std::cin.get();
+	return 0;
 }
